@@ -20,10 +20,19 @@ public class Main {
             vetor.adicionaElemento(i);
         }
         
+        System.out.println("Metodo adicionaElemento");
+        
+        System.out.println("");
+         
          System.out.println(vetor);
          
-         vetor.adicionaElemento("alou");
+         System.out.println("");
          
+         System.out.println("Metodo adicionaElementoInicio");
+         
+         System.out.println("");
+         
+         vetor.adicionaElementoInicio("caraio");
          
          System.out.println(vetor);
     }

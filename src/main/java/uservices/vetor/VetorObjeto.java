@@ -21,6 +21,16 @@ public class VetorObjeto<t> {
        this.tamanho++;
     }
     
+    public void adicionaElementoInicio(t elemento){
+        this.aumentaCapacidade();
+        t[] elementosNovos = (t[]) new Object[this.tamanho + 1];
+        elementosNovos[0] = elemento;
+        for(int i = 1; i < elementosNovos.length; i++){
+            elementosNovos[i] = this.elementos[i-1];
+        }
+        this.elementos = elementosNovos;
+    }
+    
     private void aumentaCapacidade(){
         if(this.tamanho == this.elementos.length){
             t[] vetorTemporario = (t[]) new Object[this.elementos.length + 1];
@@ -29,6 +39,10 @@ public class VetorObjeto<t> {
             }
             this.elementos = vetorTemporario;
         }
+    }
+    
+    public int tamanho(){
+        return this.tamanho;
     }
     
      @Override
