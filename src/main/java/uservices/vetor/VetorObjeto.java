@@ -6,7 +6,6 @@ public class VetorObjeto<t> {
     private t[] elementos;
     private int tamanho;
     
-    //faltam: busca por indice; busca por elemento
 
     public VetorObjeto(int capacidade) {
         this.elementos = (t[]) new Object[capacidade];
@@ -56,6 +55,22 @@ public class VetorObjeto<t> {
     
     public int tamanho(){
         return this.tamanho;
+    }
+    
+    public Object buscaObjeto(int posicao) throws Exception{
+        if(posicao < 0 && posicao <= this.tamanho){
+            return this.elementos[posicao];
+        }
+        throw new Exception("Posição Inválida");
+    }
+    
+    public int buscaPosicao(Object objeto){
+        for(int i =0; i < this.tamanho; i++){
+            if(this.elementos[i].equals(objeto)){
+                return i;
+            }
+        }
+        return -1;
     }
     
      @Override
