@@ -28,11 +28,21 @@ public class Main {
          
          System.out.println("");
          
-         System.out.println("Metodo adicionaElementoInicio");
+         System.out.println("Metodo adicionaElementoInicio (Está deletando a ultima posição, nao consegui entender o motivo)");
          
          System.out.println("");
          
          vetor.adicionaElementoInicio("caraio");
+         
+         System.out.println(vetor);
+         
+         System.out.println("");
+         
+         System.out.println("Removendo elemento da posição 0: ");
+         
+         System.out.println("");
+         
+         vetor.remove(0);
          
          System.out.println(vetor);
     }

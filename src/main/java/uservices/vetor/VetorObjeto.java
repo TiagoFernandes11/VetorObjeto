@@ -5,6 +5,8 @@ public class VetorObjeto<t> {
     
     private t[] elementos;
     private int tamanho;
+    
+    //faltam: busca por indice; busca por elemento
 
     public VetorObjeto(int capacidade) {
         this.elementos = (t[]) new Object[capacidade];
@@ -28,16 +30,27 @@ public class VetorObjeto<t> {
         for(int i = 1; i < elementosNovos.length; i++){
             elementosNovos[i] = this.elementos[i-1];
         }
-        this.elementos = elementosNovos;
+        this.setElementos(elementosNovos);
     }
     
     private void aumentaCapacidade(){
         if(this.tamanho == this.elementos.length){
-            t[] vetorTemporario = (t[]) new Object[this.elementos.length + 1];
+            t[] vetorTemporario = (t[]) new Object[this.elementos.length * 2];
             for(int i =0; i < this.tamanho; i++){
                 vetorTemporario[i] = this.elementos[i];
             }
             this.elementos = vetorTemporario;
+        }
+    }
+    
+    public void remove(int posicao){
+        if(posicao >= 0 && posicao<=this.elementos.length){
+            for(int i = posicao; i < this.tamanho; i++){
+                this.elementos[i] = this.elementos[i+1];
+            }
+            this.tamanho--;            
+        }else{
+            System.out.println("Posição inválida");
         }
     }
     
@@ -65,6 +78,9 @@ public class VetorObjeto<t> {
     }
     
     
+    public void setElementos(t[] elementos) {
+        this.elementos = elementos;
+    }
     
    
     
