@@ -14,36 +14,28 @@ public class Main {
     
     public static void main(String[] args) {
         
-        VetorObjeto vetor = new VetorObjeto();
+        VetorObjeto vetorClientes = new VetorObjeto();
         
-        for(int i = 0; i < 10; i++){
-            vetor.adicionaElemento(i);
-        }
+        System.out.println("Adição dos clientes: ");
         
-        System.out.println("Metodo adicionaElemento");
+        vetorClientes.adicionaElemento(new Clientes("Davi","999995979"));
+        vetorClientes.adicionaElemento(new Clientes("João Batista","12345678"));
+        vetorClientes.adicionaElemento(new Clientes("José","40509080"));
+        vetorClientes.adicionaElemento(new Clientes("Asa","40028922"));
+        vetorClientes.adicionaElemento(new Clientes("Salomão","69696969"));
         
         System.out.println("");
-         
-         System.out.println(vetor);
-         
-         System.out.println("");
-         
-         System.out.println("Metodo adicionaElementoInicio (Está deletando a ultima posição, nao consegui entender o motivo)");
-         
-         System.out.println("");
-         
-         vetor.adicionaElementoInicio("caraio");
-         
-         System.out.println(vetor);
-         
-         System.out.println("");
-         
-         System.out.println("Removendo elemento da posição 0: ");
-         
-         System.out.println("");
-         
-         vetor.remove(0);
-         
-         System.out.println(vetor);
+        System.out.println("Fila de clientes:");
+        System.out.println(vetorClientes);
+        System.out.println("Tamanho da fila: " + vetorClientes.tamanho());
+        
+        System.out.println("");
+        System.out.println("Após a remoção do terceiro cliente: ");
+        vetorClientes.remove(2);
+        System.out.println(vetorClientes);
+        System.out.println("Tamanho da fila: " + vetorClientes.tamanho());
+    
+    
     }
+    
 }
